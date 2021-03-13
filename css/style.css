@@ -1,0 +1,234 @@
+
+:root {
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+
+    --font-size: 13px;
+    --font-bold: 700;
+    --font-normal: 500;
+
+    --card-border-radius: 16px;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: var(--font-size);
+
+    background-color: var(--Light-Grayish-Blue);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: var(--card-border-radius);
+
+    width: 327px;
+    height: 500px;
+}
+
+.card-image {
+    overflow: hidden;
+}
+
+.card-image img{
+    width: 327px;
+    border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+}
+
+.card-article {
+    flex: 1;
+    padding: 35px;
+    padding-bottom: 10px;
+}
+
+.card-article-title {
+    margin-top: 0;
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+.card-article-text {
+    color: var(--Desaturated-Dark-Blue);
+}
+
+.card-article-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+.card-article-info-profile {
+    display: flex;
+    flex: 2;
+}
+
+.card-article-info-profile-photo{
+    border-radius: 50%;
+    width: 40px;
+}
+
+.card-article-info-profile-data {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.5vh;
+}
+
+.card-article-info-profile-data-name {
+    color: var(--Very-Dark-Grayish-Blue);
+    font-weight: var(--font-bold);
+}
+
+.card-article-info-profile-data-date {
+    color: var(--Grayish-Blue);
+}
+
+.card-article-info-share {
+    position: relative;
+    z-index: 4;
+    display: inline-block;
+    background-color: var(--Light-Grayish-Blue);
+    padding: 7px;
+    border-radius: 50%;
+}
+
+.tooltiptext {
+    width: 100%;
+    height: 100%;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    color: #fff;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left:0;
+    padding: 5px 35px 5px 35px;
+    border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
+    margin-left: -35px;
+    display: none;
+    align-items: center;
+}
+
+.tooltiptext-displaytext {
+    color: var(--Grayish-Blue);
+    font-weight: var(--font-normal);
+    font-size: 1rem;
+    letter-spacing: 0.5rem;
+    margin-right: 12px;
+}
+
+.tooltiptext-icons {
+    display: flex;
+    justify-content: space-around;
+    width: 40%
+}
+
+.tooltiptext-icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+@media only screen and (min-width: 900px) {
+    .card {
+        display: flex;
+        flex-direction: row;
+
+        height: 280px;
+        width: 730px;
+    }
+
+    .card-image {
+        width: 39%;
+    }
+
+    .card-image img{
+        width: 350px;
+        border-radius: var(--card-border-radius) 0 0 var(--card-border-radius);
+    }
+
+    .card-article {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        padding: 0 40px;
+    }
+
+    .card-article-title {
+        font-size: 20px;
+    }
+
+    .card-article-text {
+        margin-top: 0;
+    }
+
+    .card-article-info {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .tooltiptext {
+        width: 190px;
+        height: 40px;
+        background-color: var(--Very-Dark-Grayish-Blue);
+        color: #fff;
+        text-align: center;
+        border-radius: 10px;
+        padding: 5px 30px;
+        position: absolute;
+        z-index: 1;
+        margin-top: -60px;
+        left: 71.5%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .tooltiptext-icons {
+        display: flex;
+        justify-content: space-around;
+        width: 65%
+    }
+      
+    .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: var(--Very-Dark-Grayish-Blue) transparent transparent transparent;
+     }
+}
+
+.attribution { 
+    font-size: 11px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 2vh 0;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
